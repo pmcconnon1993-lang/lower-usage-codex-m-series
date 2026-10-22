@@ -1,0 +1,34 @@
+{
+  "name": "lower-usage-codex-m-series",
+  "version": "0.1.1",
+  "description": "Choose and verify a bounded local AI helper for an Apple Silicon Mac, with hardware-specific evidence and reviewed updates.",
+  "author": {
+    "name": "pmcconnon1993-lang",
+    "url": "https://github.com/pmcconnon1993-lang"
+  },
+  "homepage": "https://github.com/pmcconnon1993-lang/lower-usage-codex-m-series",
+  "repository": "https://github.com/pmcconnon1993-lang/lower-usage-codex-m-series",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "apple-silicon",
+    "local-ai",
+    "qwen",
+    "splash",
+    "omlx"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Lower Usage Codex (M Series)",
+    "shortDescription": "Local helpers for Apple chips",
+    "longDescription": "Ask your exact Apple chip and RAM, then load only relevant guidance. Compare supported Inco Splash and oMLX options, explain the evidence and resource needs, and ask before model downloads or runtime setup. Keep Codex in charge of bounded local work. Includes freshness checks and a reviewed community evidence format. Recommendations are candidates to qualify on your machine; reduced subscription usage is not established.",
+    "developerName": "pmcconnon1993-lang",
+    "category": "Developer Tools",
+    "capabilities": [],
+    "websiteURL": "https://github.com/pmcconnon1993-lang/lower-usage-codex-m-series",
+    "supportURL": "https://github.com/pmcconnon1993-lang/lower-usage-codex-m-series/issues",
+    "defaultPrompt": [
+      "Help me choose a local AI helper for my Mac. Ask my exact chip and RAM first."
+    ]
+  }
+}

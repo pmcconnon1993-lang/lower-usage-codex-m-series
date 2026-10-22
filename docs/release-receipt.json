@@ -67,5 +67,36 @@
     "models_downloaded": false,
     "runtime_configuration_changed": false
   },
-  "github_actions_at_receipt": "Active workflows; hosted validation and manual freshness runs queued, no runner assigned."
+  "github_actions_at_receipt": {
+    "validation": "success",
+    "validation_commit": "7130523987c00c6f6b881c40a43d7d1e8aab59f1",
+    "freshness": "success",
+    "freshness_commit": "44397224070ece394237c2855665be5756b7e5d7",
+    "note": "Later commits need their own CI result."
+  },
+  "plugin": {
+    "version": "0.1.1",
+    "cli_version": "0.163.0",
+    "native_local_marketplace_install": "passed",
+    "cached_skill_files": 25,
+    "byte_mismatches": 0,
+    "installed": true,
+    "enabled": false,
+    "reason_disabled": "Standalone skill remains active; avoid duplicate instruction discovery.",
+    "portable_and_compatibility_manifests": "synchronized",
+    "skills_changed": false,
+    "mcp_servers": 0,
+    "lifecycle_hooks": 0,
+    "security": {
+      "analyzed": 21,
+      "selected": 25,
+      "not_analyzed": 4,
+      "findings": 0,
+      "errors": 0
+    },
+    "limits": [
+      "Native local marketplace install verified; other client versions require checks.",
+      "Plugin activation in a fresh conversation not exercised."
+    ]
+  }
 }

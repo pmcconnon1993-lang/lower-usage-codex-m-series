@@ -20,7 +20,24 @@ The package itself uses Python's standard library and has no pip/npm dependencie
 
 ## Public installation and update-hook checks
 
-The native Codex skill-installer downloaded the published skill into a clean test destination and the maintainer's skill directory. All 25 files matched the reviewed GitHub source byte-for-byte. The installed advisor ran outside the repository working directory. Its installed freshness hook checked six model repositories plus four runtime repositories and this public repository with zero retrieval errors; it applied no changes. GitHub recognizes both workflows as active. At the time of this receipt, hosted CI and the manual freshness run were queued without an assigned runner; do not call those hosted runs passed. The local test suite and live endpoint checks above are separate completed evidence.
+The native Codex skill-installer downloaded the published skill into a clean test destination and the maintainer's skill directory. All 25 files matched the reviewed GitHub source byte-for-byte. The installed advisor ran outside the repository working directory. Its installed freshness hook checked six model repositories plus four runtime repositories and this public repository with zero retrieval errors; it applied no changes. GitHub recognizes both workflows as active. Hosted validation at commit `7130523987c00c6f6b881c40a43d7d1e8aab59f1` and the manual freshness run at `44397224070ece394237c2855665be5756b7e5d7` subsequently completed successfully. Later commits require their own CI result.
+
+## Optional plugin — v0.1.1
+
+The portable Agent Plugins 1.0 manifest and synchronized Codex compatibility
+manifest expose the unchanged 25-file skill. Codex CLI 0.163.0 registered the local
+repo marketplace and installed the plugin at version 0.1.1. All 25 cached skill
+files matched the source. Native listing confirmed `installed: true` and then
+`enabled: false`; the previously installed standalone skill stays active to avoid
+duplicate instruction discovery. No MCP server or lifecycle hook was added.
+
+The 56 behavior tests passed again. Independent manifest/documentation review
+caught a workstation path added by security enrollment; it was removed from the
+public package. The final local scan reported 21 analyzed of 25 selected files,
+four test files without applicable rules, zero findings and zero scanner errors.
+Package validation checks both manifests, metadata synchronization and marketplace
+resolution in addition to the original checks. These establish packaging and local
+installation, not a fresh-conversation model setup or universal client compatibility.
 
 ## Preserved negative results
 

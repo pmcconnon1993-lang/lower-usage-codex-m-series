@@ -1,0 +1,12 @@
+{
+  "name": "m-series-local-helpers",
+  "interface": { "displayName": "M Series Local Helpers" },
+  "plugins": [
+    {
+      "name": "lower-usage-codex-m-series",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Developer Tools"
+    }
+  ]
+}

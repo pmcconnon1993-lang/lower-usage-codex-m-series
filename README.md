@@ -17,6 +17,10 @@ Read its README and native skill. First ask which exact Mac/chip and how much RA
 
 The skill folder is `skills/m-series-local-helper`. Codex's built-in `$skill-installer` can install this GitHub path. A direct local copy can go into `~/.agents/skills/m-series-local-helper` (or the skill directory supported by your Codex version). It contains plain Markdown, JSON and Python standard-library tools; no model weights, credentials, global hooks or background service are bundled. A skill install is small. Model/runtime installation is a separate approved step. See [official Codex skill documentation](https://developers.openai.com/codex/skills/).
 
+Prefer a plugin? The [optional Codex plugin](docs/PLUGIN.md) packages this same skill,
+with current and compatibility manifests plus a GitHub marketplace. Choose one
+active installation method. Plugin support is not required for the skill.
+
 ## What it knows
 
 M1, M2, M3, M4, M5 and M6 have separate guides. Base, Pro, Max and Ultra variants are recognized only where the hardware is documented. **RAM and workload decide the starting tier; generation decides runtime compatibility.** Unknown/future variants trigger research rather than a fabricated recommendation.

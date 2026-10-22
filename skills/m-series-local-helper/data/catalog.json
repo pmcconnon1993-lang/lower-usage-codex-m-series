@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-22",
+  "review_interval_days": 30,
+  "selection_policy": "Conservative maintainer candidates; not a global benchmark ranking. Refresh before each new setup.",
+  "machines": {
+    "m1": {
+      "variants": [
+        "base",
+        "pro",
+        "max",
+        "ultra"
+      ],
+      "guide": "references/machines/m1.md",
+      "ram_bounds_gb": {
+        "base": [
+          8,
+          16
+        ],
+        "pro": [
+          16,
+          32
+        ],
+        "max": [
+          32,
+          64
+        ],
+        "ultra": [
+          64,
+          128
+        ]
+      }
+    },
+    "m2": {
+      "variants": [
+        "base",
+        "pro",
+        "max",
+        "ultra"
+      ],
+      "guide": "references/machines/m2.md",
+      "ram_bounds_gb": {
+        "base": [
+          8,
+          24
+        ],
+        "pro": [
+          16,
+          32
+        ],
+        "max": [
+          32,
+          96
+        ],
+        "ultra": [
+          64,
+          192
+        ]
+      }
+    },
+    "m3": {
+      "variants": [
+        "base",
+        "pro",
+        "max",
+        "ultra"
+      ],
+      "guide": "references/machines/m3.md",
+      "ram_bounds_gb": {
+        "base": [
+          8,
+          24
+        ],
+        "pro": [
+          18,
+          36
+        ],
+        "max": [
+          36,
+          128
+        ],
+        "ultra": [
+          96,
+          512
+        ]
+      }
+    },
+    "m4": {
+      "variants": [
+        "base",
+        "pro",
+        "max"
+      ],
+      "guide": "references/machines/m4.md",
+      "ram_bounds_gb": {
+        "base": [
+          16,
+          32
+        ],
+        "pro": [
+          24,
+          64
+        ],
+        "max": [
+          36,
+          128
+        ]
+      }
+    },
+    "m5": {
+      "variants": [
+        "base",
+        "pro",
+        "max",
+        "ultra"
+      ],
+      "guide": "references/machines/m5.md",
+      "ram_bounds_gb": {
+        "base": [
+          16,
+          32
+        ],
+        "pro": [
+          24,
+          64
+        ],
+        "max": [
+          36,
+          128
+        ],
+        "ultra": [
+          96,
+          512
+        ]
+      }
+    },
+    "m6": {
+      "variants": [
+        "base"
+      ],
+      "guide": "references/machines/m6.md",
+      "ram_bounds_gb": {
+        "base": [
+          16,
+          32
+        ]
+      }
+    }
+  },
+  "models": {
+    "qwen2-4": {
+      "id": "mlx-community/Qwen3.5-2B-MLX-4bit",
+      "revision": "93760be4f1f69842a46bc13dbdc0f19e291392a3",
+      "repository_bytes": 1749083534,
+      "precision": "4-bit",
+      "format": "MLX",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/mlx-community/Qwen3.5-2B-MLX-4bit",
+      "evidence_status": "source_backed_candidate"
+    },
+    "qwen4-4": {
+      "id": "mlx-community/Qwen3.5-4B-MLX-4bit",
+      "revision": "32f3e8ecf65426fc3306969496342d504bfa13f3",
+      "repository_bytes": 3061132920,
+      "precision": "4-bit",
+      "format": "MLX",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/mlx-community/Qwen3.5-4B-MLX-4bit",
+      "evidence_status": "source_backed_candidate"
+    },
+    "qwen9-4": {
+      "id": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "repository_bytes": 5977074591,
+      "precision": "4-bit",
+      "format": "MLX",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/mlx-community/Qwen3.5-9B-MLX-4bit",
+      "evidence_status": "source_backed_candidate"
+    },
+    "qwen35-4": {
+      "id": "mlx-community/Qwen3.6-35B-A3B-4bit",
+      "revision": "38740b847e4cb78f352aba30aa41c76e08e6eb46",
+      "repository_bytes": 20429169263,
+      "precision": "4-bit",
+      "format": "MLX",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-4bit",
+      "evidence_status": "source_backed_candidate"
+    },
+    "qwen35-8": {
+      "id": "mlx-community/Qwen3.6-35B-A3B-8bit",
+      "revision": "e06a74e6236a60c8367e1a3214e83d8b61b637b0",
+      "repository_bytes": 37748367994,
+      "precision": "8-bit",
+      "format": "MLX",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/mlx-community/Qwen3.6-35B-A3B-8bit",
+      "evidence_status": "recorded_single_machine"
+    },
+    "dflash35": {
+      "id": "incoai/Qwen3.6-35B-A3B-DFlash2",
+      "revision": "51ef7b6923ad6c14cb1bb41c37a9041446496ab6",
+      "repository_bytes": 1052819805,
+      "format": "safetensors-draft",
+      "precision": "upstream",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/incoai/Qwen3.6-35B-A3B-DFlash2",
+      "evidence_status": "matching_draft_only"
+    }
+  },
+  "tiers": [
+    {
+      "min_ram_gb": 8,
+      "model": "qwen2-4",
+      "context_tokens": 4096,
+      "ssd_cache_gb": 1,
+      "reason": "A small post-trained MLX model preserves desktop headroom; qualify extraction and tool reliability before relying on it.",
+      "output_tokens": 512
+    },
+    {
+      "min_ram_gb": 16,
+      "model": "qwen4-4",
+      "context_tokens": 4096,
+      "ssd_cache_gb": 2,
+      "reason": "A small post-trained MLX model preserves desktop headroom; qualify extraction and tool reliability before relying on it.",
+      "output_tokens": 512
+    },
+    {
+      "min_ram_gb": 32,
+      "model": "qwen9-4",
+      "context_tokens": 8192,
+      "ssd_cache_gb": 4,
+      "reason": "A small post-trained MLX model preserves desktop headroom; qualify extraction and tool reliability before relying on it.",
+      "output_tokens": 512
+    },
+    {
+      "min_ram_gb": 48,
+      "model": "qwen35-4",
+      "context_tokens": 16384,
+      "ssd_cache_gb": 4,
+      "reason": "Sparse 35B family balances bounded helper quality with low active-parameter work; qualify real tools and headroom.",
+      "output_tokens": 2048
+    },
+    {
+      "min_ram_gb": 96,
+      "model": "qwen35-8",
+      "context_tokens": 32768,
+      "ssd_cache_gb": 8,
+      "reason": "Sparse 35B family balances bounded helper quality with low active-parameter work; qualify real tools and headroom.",
+      "output_tokens": 2048
+    }
+  ],
+  "runtime_sources": {
+    "splash": "https://github.com/incoai/splash",
+    "omlx": "https://github.com/jundot/omlx",
+    "mlx-lm": "https://github.com/ml-explore/mlx-lm",
+    "splash-m1-m2": "https://github.com/paperniuk/splash"
+  },
+  "limitations": [
+    "Model download size is not peak runtime memory.",
+    "No comparative winner measured across every Apple chip.",
+    "Small-model tool quality and fresh-machine installation need local qualification.",
+    "Recorded M5 timings do not establish M1, M2, M6 or subscription savings."
+  ],
+  "runtime_revisions": {
+    "incoai/splash": "1482f6bbc2abf12375332725302019594150b6cb",
+    "jundot/omlx": "d76292753cd61faab831cc5677d1262764d1bed3",
+    "ml-explore/mlx-lm": "0d4d3d04f8ab7ce4a51e7209e8615755a48ba94d",
+    "paperniuk/splash": "78b048c2abf0d6c4c0cb8da2975a70482d3d3a96"
+  }
+}

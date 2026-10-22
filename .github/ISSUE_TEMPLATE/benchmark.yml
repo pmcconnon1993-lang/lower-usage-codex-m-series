@@ -1,0 +1,35 @@
+name: Hardware helper result
+description: Share a sanitized, reproducible result from your Mac.
+title: "[Result] chip / RAM / model"
+labels: ["evidence"]
+body:
+  - type: markdown
+    attributes:
+      value: "Use public/synthetic tasks. Never include private chats, credentials, serial numbers or local usernames. A report is evidence for review, not automatic promotion."
+  - type: input
+    id: machine
+    attributes:
+      label: Exact chip, RAM and macOS
+      placeholder: "M2 Max, 64 GB, macOS 26.4"
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Exact model, revision, precision, runtime version and optional draft
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized benchmark JSON or link to proposed report PR
+      description: "Run the bundled benchmark. Include failures and limitations; a token rate alone is insufficient."
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Publication review
+      options:
+        - label: "I reviewed this exact report and approve its public posting; it contains no private source material or credentials."
+          required: true

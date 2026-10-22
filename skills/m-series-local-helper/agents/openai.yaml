@@ -1,0 +1,6 @@
+interface:
+  display_name: "Lower Usage Codex (M Series)"
+  short_description: "Match an Apple Silicon local helper to your Mac"
+  default_prompt: "Use $m-series-local-helper to ask about my Mac, recommend a local helper with evidence, and offer a setup plan."
+policy:
+  allow_implicit_invocation: true

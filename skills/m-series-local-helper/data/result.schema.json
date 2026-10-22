@@ -1,0 +1,618 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Community-reported synthetic local-helper result",
+  "description": "Closed, privacy-minimized report. Valid schema does not establish truth, independent replication, model superiority or usage savings.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "evidence_status": {
+      "const": "community_reported"
+    },
+    "independently_verified": {
+      "const": false
+    },
+    "recommendation_promoted": {
+      "const": false
+    },
+    "submission": {
+      "const": "local_only"
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20,
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "report_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 29,
+      "pattern": "^\\d{8}T\\d{6}Z-[0-9a-f]{12}$"
+    },
+    "machine": {
+      "type": "object",
+      "properties": {
+        "chip": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^m[1-9][0-9]?$"
+        },
+        "variant": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "enum": [
+            "base",
+            "pro",
+            "max",
+            "ultra"
+          ]
+        },
+        "ram_gb": {
+          "type": "integer",
+          "minimum": 8,
+          "maximum": 4096
+        },
+        "macos_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 11,
+          "pattern": "^[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{1,3})?$"
+        },
+        "background_load": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "enum": [
+            "idle",
+            "light",
+            "other-heavy-work",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "chip",
+        "variant",
+        "ram_gb",
+        "macos_version",
+        "background_load"
+      ],
+      "additionalProperties": false
+    },
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "runtime": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "enum": [
+            "omlx",
+            "splash",
+            "mlx-lm",
+            "ollama",
+            "lm-studio",
+            "llama.cpp",
+            "other"
+          ]
+        },
+        "runtime_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.+:-]{0,95}$"
+        },
+        "engine_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.+:-]{0,95}$"
+        },
+        "model_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 257,
+          "pattern": "^(?:[A-Za-z0-9][A-Za-z0-9_.-]{0,95}/)?[A-Za-z0-9][A-Za-z0-9_.+:-]{0,159}$"
+        },
+        "model_repository": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 257,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,95}/[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "model_revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[0-9a-f]{40,64}$"
+        },
+        "quantization": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 96,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.+:-]{0,95}$"
+        },
+        "draft": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "repository": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 257,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,95}/[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[0-9a-f]{40,64}$"
+                },
+                "quantization": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 96,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9_.+:-]{0,95}$"
+                }
+              },
+              "required": [
+                "repository",
+                "revision",
+                "quantization"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "context_tokens": {
+          "type": "integer",
+          "minimum": 2048,
+          "maximum": 1048576
+        },
+        "max_tokens_per_turn": {
+          "const": 512
+        },
+        "max_turns": {
+          "const": 6
+        },
+        "concurrency": {
+          "const": 1
+        },
+        "temperature": {
+          "const": 0
+        },
+        "reasoning": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "enum": [
+            "qwen-disabled",
+            "server-default"
+          ]
+        },
+        "cache_condition": {
+          "const": "uncontrolled-repeated-public-fixture"
+        },
+        "lifecycle": {
+          "const": "existing-server-no-changes"
+        }
+      },
+      "required": [
+        "runtime",
+        "runtime_version",
+        "engine_version",
+        "model_id",
+        "model_repository",
+        "model_revision",
+        "quantization",
+        "draft",
+        "context_tokens",
+        "max_tokens_per_turn",
+        "max_turns",
+        "concurrency",
+        "temperature",
+        "reasoning",
+        "cache_condition",
+        "lifecycle"
+      ],
+      "additionalProperties": false
+    },
+    "task": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "selected-source-facts-v1"
+        },
+        "fixture_sha256": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "public_fixture": {
+          "const": true
+        },
+        "private_input_used": {
+          "const": false
+        },
+        "expected": {
+          "type": "object",
+          "properties": {
+            "total_units": {
+              "const": 42
+            },
+            "current_status": {
+              "const": "scheduled"
+            },
+            "approved": {
+              "const": false
+            },
+            "source": {
+              "const": "fixture.txt"
+            }
+          },
+          "required": [
+            "total_units",
+            "current_status",
+            "approved",
+            "source"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "fixture_sha256",
+        "public_fixture",
+        "private_input_used",
+        "expected"
+      ],
+      "additionalProperties": false
+    },
+    "runs": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 30
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "enum": [
+              "passed",
+              "failed"
+            ]
+          },
+          "failure_category": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "enum": [
+                  "protocol",
+                  "quality",
+                  "local_error"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "wall_task_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 3600
+          },
+          "protocol_complete": {
+            "type": "boolean"
+          },
+          "source_coverage_complete": {
+            "type": "boolean"
+          },
+          "quality_checks": {
+            "type": "object",
+            "properties": {
+              "exact_keys": {
+                "type": "boolean"
+              },
+              "total_units": {
+                "type": "boolean"
+              },
+              "current_status": {
+                "type": "boolean"
+              },
+              "approved": {
+                "type": "boolean"
+              },
+              "source": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "exact_keys",
+              "total_units",
+              "current_status",
+              "approved",
+              "source"
+            ],
+            "additionalProperties": false
+          },
+          "answer_sha256": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 64,
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tool_calls": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 8
+          },
+          "model_calls": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "prompt_tokens": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "completion_tokens": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "total_tokens": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "cached_tokens": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "enum": [
+                  "server_counts_observed",
+                  "one_or_more_counts_unavailable"
+                ]
+              }
+            },
+            "required": [
+              "prompt_tokens",
+              "completion_tokens",
+              "total_tokens",
+              "cached_tokens",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "ttft_seconds": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "const": null
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "enum": [
+                  "not_instrumented"
+                ]
+              }
+            },
+            "required": [
+              "value",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "peak_memory_bytes": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "const": null
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "enum": [
+                  "not_instrumented"
+                ]
+              }
+            },
+            "required": [
+              "value",
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "index",
+          "status",
+          "failure_category",
+          "wall_task_seconds",
+          "protocol_complete",
+          "source_coverage_complete",
+          "quality_checks",
+          "answer_sha256",
+          "tool_calls",
+          "model_calls",
+          "usage",
+          "ttft_seconds",
+          "peak_memory_bytes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "repetitions": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 30
+        },
+        "passed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "median_wall_task_seconds_including_failures": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3600
+        }
+      },
+      "required": [
+        "repetitions",
+        "passed",
+        "failed",
+        "median_wall_task_seconds_including_failures"
+      ],
+      "additionalProperties": false
+    },
+    "usage_savings": {
+      "type": "object",
+      "properties": {
+        "measured": {
+          "const": false
+        },
+        "codex_usage_reduction_percent": {
+          "const": null
+        },
+        "reason": {
+          "const": "No matched Codex baseline was measured."
+        }
+      },
+      "required": [
+        "measured",
+        "codex_usage_reduction_percent",
+        "reason"
+      ],
+      "additionalProperties": false
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 160,
+        "enum": [
+          "self_reported_not_independently_verified",
+          "public_fixture_is_narrow_not_general_quality",
+          "cache_and_cold_start_not_controlled",
+          "memory_and_ttft_not_instrumented",
+          "no_codex_usage_savings_measured"
+        ]
+      }
+    },
+    "tooling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark_sha256",
+        "worker_sha256"
+      ],
+      "properties": {
+        "benchmark_sha256": {
+          "type": "string",
+          "pattern": "[a-f0-9]{64}"
+        },
+        "worker_sha256": {
+          "type": "string",
+          "pattern": "[a-f0-9]{64}"
+        }
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "evidence_status",
+    "independently_verified",
+    "recommendation_promoted",
+    "submission",
+    "created_at",
+    "report_id",
+    "machine",
+    "configuration",
+    "task",
+    "runs",
+    "summary",
+    "usage_savings",
+    "limitations",
+    "tooling"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "evidence_status": "community_reported",
+  "independently_verified": false,
+  "recommendation_promoted": false,
+  "submission": "local_only",
+  "created_at": "2026-10-22T14:25:20Z",
+  "report_id": "20261022T142520Z-6af19c4da205",
+  "machine": {
+    "chip": "m5",
+    "variant": "ultra",
+    "ram_gb": 256,
+    "macos_version": "27.0.1",
+    "background_load": "unknown"
+  },
+  "configuration": {
+    "runtime": "omlx",
+    "runtime_version": "0.7.2",
+    "engine_version": "1.4.0",
+    "model_id": "Qwen3.6-35B-A3B-8bit",
+    "model_repository": "mlx-community/Qwen3.6-35B-A3B-8bit",
+    "model_revision": "e06a74e6236a60c8367e1a3214e83d8b61b637b0",
+    "quantization": "8bit",
+    "draft": {
+      "repository": "incoai/Qwen3.6-35B-A3B-DFlash2",
+      "revision": "51ef7b6923ad6c14cb1bb41c37a9041446496ab6",
+      "quantization": "upstream"
+    },
+    "context_tokens": 32768,
+    "max_tokens_per_turn": 512,
+    "max_turns": 6,
+    "concurrency": 1,
+    "temperature": 0,
+    "reasoning": "qwen-disabled",
+    "cache_condition": "uncontrolled-repeated-public-fixture",
+    "lifecycle": "existing-server-no-changes"
+  },
+  "tooling": {
+    "benchmark_sha256": "801f86c7c4ecedc632f02be0636e0ffcc78f1cf7ca171d412a068fb59b459397",
+    "worker_sha256": "8c162cbcb68b52b07e41017f06553b8cdea87ef28654d7801ea7005610a71fb5"
+  },
+  "task": {
+    "id": "selected-source-facts-v1",
+    "fixture_sha256": "18f09a4f5f544fecfad87de5729ea28e836e5006f04d1b0d920b7831ad07d959",
+    "public_fixture": true,
+    "private_input_used": false,
+    "expected": {
+      "total_units": 42,
+      "current_status": "scheduled",
+      "approved": false,
+      "source": "fixture.txt"
+    }
+  },
+  "runs": [
+    {
+      "index": 1,
+      "status": "passed",
+      "failure_category": null,
+      "wall_task_seconds": 0.503402,
+      "protocol_complete": true,
+      "source_coverage_complete": true,
+      "quality_checks": {
+        "exact_keys": true,
+        "total_units": true,
+        "current_status": true,
+        "approved": true,
+        "source": true
+      },
+      "answer_sha256": "bc49d3a8d58a1a55fa90c44d32f9c797ffb675b2a32c13cd007436b99a9256bb",
+      "tool_calls": 1,
+      "model_calls": 2,
+      "usage": {
+        "prompt_tokens": 1209,
+        "completion_tokens": 79,
+        "total_tokens": 1288,
+        "cached_tokens": 1152,
+        "reason": "server_counts_observed"
+      },
+      "ttft_seconds": {
+        "value": null,
+        "reason": "not_instrumented"
+      },
+      "peak_memory_bytes": {
+        "value": null,
+        "reason": "not_instrumented"
+      }
+    },
+    {
+      "index": 2,
+      "status": "passed",
+      "failure_category": null,
+      "wall_task_seconds": 0.395701,
+      "protocol_complete": true,
+      "source_coverage_complete": true,
+      "quality_checks": {
+        "exact_keys": true,
+        "total_units": true,
+        "current_status": true,
+        "approved": true,
+        "source": true
+      },
+      "answer_sha256": "bc49d3a8d58a1a55fa90c44d32f9c797ffb675b2a32c13cd007436b99a9256bb",
+      "tool_calls": 1,
+      "model_calls": 2,
+      "usage": {
+        "prompt_tokens": 1209,
+        "completion_tokens": 79,
+        "total_tokens": 1288,
+        "cached_tokens": 1152,
+        "reason": "server_counts_observed"
+      },
+      "ttft_seconds": {
+        "value": null,
+        "reason": "not_instrumented"
+      },
+      "peak_memory_bytes": {
+        "value": null,
+        "reason": "not_instrumented"
+      }
+    },
+    {
+      "index": 3,
+      "status": "passed",
+      "failure_category": null,
+      "wall_task_seconds": 0.392738,
+      "protocol_complete": true,
+      "source_coverage_complete": true,
+      "quality_checks": {
+        "exact_keys": true,
+        "total_units": true,
+        "current_status": true,
+        "approved": true,
+        "source": true
+      },
+      "answer_sha256": "bc49d3a8d58a1a55fa90c44d32f9c797ffb675b2a32c13cd007436b99a9256bb",
+      "tool_calls": 1,
+      "model_calls": 2,
+      "usage": {
+        "prompt_tokens": 1209,
+        "completion_tokens": 79,
+        "total_tokens": 1288,
+        "cached_tokens": 1152,
+        "reason": "server_counts_observed"
+      },
+      "ttft_seconds": {
+        "value": null,
+        "reason": "not_instrumented"
+      },
+      "peak_memory_bytes": {
+        "value": null,
+        "reason": "not_instrumented"
+      }
+    }
+  ],
+  "summary": {
+    "repetitions": 3,
+    "passed": 3,
+    "failed": 0,
+    "median_wall_task_seconds_including_failures": 0.395701
+  },
+  "usage_savings": {
+    "measured": false,
+    "codex_usage_reduction_percent": null,
+    "reason": "No matched Codex baseline was measured."
+  },
+  "limitations": [
+    "self_reported_not_independently_verified",
+    "public_fixture_is_narrow_not_general_quality",
+    "cache_and_cold_start_not_controlled",
+    "memory_and_ttft_not_instrumented",
+    "no_codex_usage_savings_measured"
+  ]
+}

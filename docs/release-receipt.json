@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-22",
+  "unit_tests": {
+    "passed": 56,
+    "failed": 0
+  },
+  "native_skill_validation": "passed",
+  "package_validation": "passed",
+  "live_portable_worker_cases": 2,
+  "live_benchmark_repetitions": 3,
+  "live_benchmark_passed": 3,
+  "security": {
+    "findings": 0,
+    "selected_files": 21,
+    "analyzed_files": 17,
+    "not_analyzed_files": 4,
+    "not_analyzed": [
+      {
+        "file": "tests/test_advisor.py",
+        "status": "not_analyzed",
+        "reason": "no_applicable_rule_or_not_reported"
+      },
+      {
+        "file": "tests/test_refresh.py",
+        "status": "not_analyzed",
+        "reason": "no_applicable_rule_or_not_reported"
+      },
+      {
+        "file": "tests/test_worker.py",
+        "status": "not_analyzed",
+        "reason": "no_applicable_rule_or_not_reported"
+      },
+      {
+        "file": "tests/test_benchmark.py",
+        "status": "not_analyzed",
+        "reason": "no_applicable_rule_or_not_reported"
+      }
+    ],
+    "errors": [],
+    "limitations": [
+      "Selected first-party code/configuration only; archives and outputs excluded.",
+      "Credential stores, private documents, media, symlinks, and top-level generated state excluded.",
+      "No full Git-history or dependency-advisory audit; no automatic remediation.",
+      "AI triage is advisory; daily/full-review mode processes every static candidate in bounded batches.",
+      "Ordinary scans cap AI triage at 12 candidates. A scan is not a security certification."
+    ]
+  },
+  "dependencies": "No third-party runtime dependencies in shipped Python code; runtime/model installs are separate and require their own advisories.",
+  "limits": [
+    "No full fresh-machine setup trial",
+    "No cross-chip benchmark ranking",
+    "No peak-memory or TTFT measurement",
+    "No measured Codex savings"
+  ]
+}

@@ -1,0 +1,22 @@
+name: New model or runtime evidence
+description: Suggest a source-backed challenger or compatibility correction.
+title: "[Candidate] model or runtime"
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL and exact revision/version
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What changed, which hardware it affects, and what has actually been tested
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Known limitations or failed checks
+    validations:
+      required: true

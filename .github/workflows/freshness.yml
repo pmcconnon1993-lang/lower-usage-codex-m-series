@@ -1,0 +1,22 @@
+name: Check upstream knowledge freshness
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 14 * * 1'
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Read primary metadata only
+        run: python3 skills/m-series-local-helper/scripts/refresh.py --output freshness.json
+      - name: Keep report including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: upstream-freshness
+          path: freshness.json
+          retention-days: 30

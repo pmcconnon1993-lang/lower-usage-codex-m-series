@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+.project-security.json
+local/
+private/
+*.gguf
+*.safetensors
+.env

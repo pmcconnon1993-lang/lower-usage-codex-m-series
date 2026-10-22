@@ -14,9 +14,13 @@ The bundled public synthetic benchmark also completed three serial runs with all
 
 ## Security and dependency scope
 
-The local static scanner reported no findings in analyzed first-party code/configuration. It does not provide a security certification or a full dependency audit. Test files without applicable rules can be reported as not analyzed; their behavior is exercised by the unit suite and source-reviewed. The final scan's counts and exclusions are recorded in the release receipt. No model-based security triage was necessary when the static scanner produced zero candidate findings.
+The local static scanner reported no findings in analyzed first-party code/configuration. It does not provide a security certification or a full dependency audit. Test files without applicable rules can be reported as not analyzed; their behavior is exercised by the unit suite and source-reviewed. The recorded scan's counts and exclusions are recorded in the release receipt. No model-based security triage was necessary when the static scanner produced zero candidate findings.
 
 The package itself uses Python's standard library and has no pip/npm dependencies or installers. GitHub Actions are pinned to commit hashes. Model/runtime dependencies are outside this package and require their own current advisory/license checks when a user approves actual setup.
+
+## Public installation and update-hook checks
+
+The native Codex skill-installer downloaded the published skill into a clean test destination and the maintainer's skill directory. All 25 files matched the reviewed GitHub source byte-for-byte. The installed advisor ran outside the repository working directory. Its installed freshness hook checked six model repositories plus four runtime repositories and this public repository with zero retrieval errors; it applied no changes. GitHub recognizes both workflows as active. At the time of this receipt, hosted CI and the manual freshness run were queued without an assigned runner; do not call those hosted runs passed. The local test suite and live endpoint checks above are separate completed evidence.
 
 ## Preserved negative results
 
